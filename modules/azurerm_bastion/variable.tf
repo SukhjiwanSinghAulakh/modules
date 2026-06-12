@@ -1,0 +1,1 @@
+variable "bhost_name" {}

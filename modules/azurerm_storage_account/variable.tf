@@ -1,0 +1,2 @@
+variable "resg" {}
+variable "std" {}
