@@ -1,22 +1,33 @@
-resource "azurerm_network_security_group" "nsg" {
-  name                = "example-nsg"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+nsg = {
+  nsg1 = {
+    name                = "nsg1"
+    location            = "eastus"
+    resource_group_name = "dev-rg-frontend-eastus"
 
-  security_rule {
-    name                       = "test123"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
+    security_rule = {
+      rule1 = {
+        name                       = "rdp"
+        priority                   = 100
+        direction                  = "Inbound"
+        access                     = "Allow"
+        protocol                   = "Tcp"
+        source_port_range          = "*"
+        destination_port_range     = "3389"
+        source_address_prefix      = "10.0.2.0/24"
+        destination_address_prefix = "*"
+      }
+
+      rule2 = {
+        name                       = "ssh"
+        priority                   = 101
+        direction                  = "Inbound"
+        access                     = "Allow"
+        protocol                   = "Tcp"
+        source_port_range          = "*"
+        destination_port_range     = "22"
+        source_address_prefix      = "10.0.2.0/24"
+        destination_address_prefix = "*"
+      }
+    }
   }
-}
-
-resource "azurerm_subnet_network_security_group_association" "example" {
-  subnet_id                 = azurerm_subnet.example.id
-  network_security_group_id = azurerm_network_security_group.example.id
 }
