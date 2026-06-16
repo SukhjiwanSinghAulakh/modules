@@ -1,8 +1,8 @@
 nsg = {
   nsg1 = {
     name                = "nsg1"
-    location            = "eastus"
-    resource_group_name = "dev-rg-frontend-eastus"
+    location            = "japaneast"
+    resource_group_name = "dev-rg-frontend-japaneast"
 
     security_rule = {
       rule1 = {
