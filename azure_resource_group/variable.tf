@@ -1,2 +1,2 @@
-variable prefix{}
-variable
+variable "prefix" {}
+variable "rg_name" {}
