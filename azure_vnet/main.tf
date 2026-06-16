@@ -1,7 +1,7 @@
-resource"azurerm_virtual_network""vnet"{
-  for_each=var.vnet
-  name="${each.prefix}-${each.value.name}-${each.value.location}"
-  location=each.value.location
-  azurerm_resource_group=each.value.azurerm_resource_group
-  address_perfix=each.value.address_perfix
+resource "azurerm_virtual_network" "vnet" {
+  for_each               = var.vnet
+  name                   = "${var.prefix}-${each.value.name}-${each.value.location}"
+  location               = each.value.location
+ resource_group_name = each.value.azurerm_resource_group
+  address_space       = each.value.address_space
 }
