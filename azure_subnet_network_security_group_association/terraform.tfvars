@@ -1,31 +1,7 @@
-nsg = {
-  nsg1 = {
-    name                = "nsg1"
-    location            = "eastus"
-    resource_group_name  = "dev-rg-frontend-eastus"
-    security_rule ={
-     rule1 = { 
-            name                       = "nsg1-rule1"
-            priority                   = 100
-            direction                  = "Inbound"
-            access                     = "Allow"
-            protocol                   = "Tcp"
-            source_port_range          = "*"
-            destination_port_range     = "3389"
-            source_address_prefix      = "10.0.2.0"
-            destination_address_prefix = "*"
-    }
-    rule2 = {
-            name                       = "nsg1-rule2"
-            priority                   = 100
-            direction                  = "Inbound"
-            access                     = "Allow"
-            protocol                   = "Tcp"
-            source_port_range          = "*"
-            destination_port_range     = "22"
-            source_address_prefix      = "10.0.1.0"
-            destination_address_prefix = "*"
-          }
-    }
+subnetnsg = {
+  subnetnsg1 = {
+    subnet_id                 = "/subscriptions/5763111c-28fc-4a01-97e4-3b5805a10876/resourceGroups/dev-rg-frontend-eastus/providers/Microsoft.Network/virtualNetworks/dev-vnet-01-eastus/subnets/subnet-01"
+    network_security_group_id = "/subscriptions/5763111c-28fc-4a01-97e4-3b5805a10876/resourceGroups/dev-rg-frontend-eastus/providers/Microsoft.Network/networkSecurityGroups/nsg1"
   }
 }
+
