@@ -1,0 +1,9 @@
+prefix = "dev"
+vnet={
+  vnet1={
+    name="vnet-01"
+    location="westus"
+    azurerm_resource_group="dev-rg-frontend-eastus"
+    address prefix=["10.0.0.0/16"]
+  }
+}
