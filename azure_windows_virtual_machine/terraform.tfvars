@@ -1,7 +1,7 @@
 vmwin = {
   vmwin1 = {
     name                  = "window-machine"
-    resource_group_name   = "dev-rg-frontend-ejapaneast"
+    resource_group_name   = "dev-rg-frontend-japaneast"
     location              = "japaneast"
     size                  = "Standard_D2s_v3"
     admin_username        = "adminuser"
