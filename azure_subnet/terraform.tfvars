@@ -9,6 +9,6 @@ subnet = {
     name                 = "AzureBastionSubnet"
     virtual_network_name = "dev-vnet-01-eastus"
     resource_group_name  = "dev-rg-frontend-eastus"
-    address_prefixes    = ["10.0.2.0/24"]
+    address_prefixes     = ["10.0.2.0/24"]
   }
 }
