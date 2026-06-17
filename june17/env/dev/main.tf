@@ -1,14 +1,12 @@
-module "resource_group" {
-  source = "../../modules/azurerm_resource_group"
-  rgn    = var.rgn
+module "rg" {
+  source  = "../../modules/azure_resource_group"
+  rg_name = var.rg_name
+  prefix  = var.prefix
 }
-module "vnet" {
-  depends_on = [ module.resource_group ]
-  source = "../../modules/azurerm_virtual_network"
-  vnet_name = var.vnet_name
-}
-module "subnet" {
-  depends_on = [ module.vnet ]
-  source = "../../modules/azurerm_subnet"
-  subnet_name = var.subnet_name
+module "pvnet" {
+  source              = "../../modules/azure_vnet"
+  prefix              = var.prefix
+  vnet                = var.vnet
+  resource_group_name = module.rg.rg_name
+  location            = module.rg.location
 }

@@ -1,4 +1,5 @@
-variable "rgn" {}
-variable "vnet_name" {}
-variable "subnet_name" {}
-variable "nsg" {}
+variable "prefix" {}
+variable "rg_name" {}
+variable "vnet" {}
+variable "location" {}
+variable "resource_group_name" {}
